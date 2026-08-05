@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Mission365"
+description = "A personal Life OS dashboard called Mission365 — a 365-day discipline and productivity tracker. Tracks daily rituals/missions, expenses, fitness, study subjects, mission goals, achievements, XP/leveling system, and statistics. All data persisted in LocalStorage. Dark premium design for a serious personal development user."
+version = "1.0.0"
+id = "artifacts/mission365"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25121
+
+[services.development]
+run = "pnpm --filter @workspace/mission365 run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mission365", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/mission365/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25121"
+BASE_PATH = "/"
