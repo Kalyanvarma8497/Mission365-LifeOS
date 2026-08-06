@@ -1,4 +1,4 @@
-import { Task, Profile, XPState, MonthlyExpenses, FitnessState, StudyState, GoalsState, DailyHistory } from './types';
+import { Task, Profile, XPState, MonthlyExpenses, FitnessState, StudyState, GoalsState, DailyHistory, AppSettings } from './types';
 
 export const MISSION_START_DATE = '2026-05-08';
 

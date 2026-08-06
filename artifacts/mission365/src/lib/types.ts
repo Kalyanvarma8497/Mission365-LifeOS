@@ -111,3 +111,7 @@ export interface Mission {
 export interface GoalsState {
   missions: Mission[];
 }
+
+export interface AppSettings {
+  theme: 'dark' | 'light';
+}
